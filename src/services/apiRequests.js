@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+export const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
+
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
 const APi_KEY = 'cdd27e005bd8c0d816b6c6c875eecf17';
 
@@ -35,5 +37,3 @@ export async function movieReviews(movieId) {
   );
   return response.data;
 }
-
-console.log(getTrending());

@@ -4,7 +4,7 @@ import { Container } from '@chakra-ui/react';
 
 export const Layout = () => {
   return (
-    <Container maxW="1100px">
+    <Container maxW="1600px">
       <NavBar />
       <Outlet />
     </Container>
