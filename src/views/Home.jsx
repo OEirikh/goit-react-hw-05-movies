@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Box, Text } from '@chakra-ui/react';
 import { getTrending } from '../services/apiRequests';
 
@@ -12,4 +12,4 @@ export function Home(props) {
   );
 }
 
-Home.propTypes = {};
+// Home.propTypes = {};

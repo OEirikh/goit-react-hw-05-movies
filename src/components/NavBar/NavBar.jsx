@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 // export default function NavBar() {
 //   return (
@@ -89,4 +89,4 @@ export function NavBar() {
   );
 }
 
-NavBar.propTypes = {};
+// NavBar.propTypes = {};

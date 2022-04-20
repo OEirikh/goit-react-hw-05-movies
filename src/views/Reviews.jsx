@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Box, Text } from '@chakra-ui/react';
 
 export function Reviews(props) {
@@ -10,4 +10,4 @@ export function Reviews(props) {
   );
 }
 
-Reviews.propTypes = {};
+// Reviews.propTypes = {};

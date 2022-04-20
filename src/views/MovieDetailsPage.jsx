@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { Box, Text } from '@chakra-ui/react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 export function MovieDetailsPage(props) {
   return (
@@ -15,4 +15,4 @@ export function MovieDetailsPage(props) {
   );
 }
 
-MovieDetailsPage.propTypes = {};
+// MovieDetailsPage.propTypes = {};

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Text } from '@chakra-ui/react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 export function Cast(props) {
   return (
@@ -10,4 +10,4 @@ export function Cast(props) {
   );
 }
 
-Cast.propTypes = {};
+// Cast.propTypes = {};
