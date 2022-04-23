@@ -34,7 +34,7 @@ export function MovieDetailsPage() {
     getMovie();
   }, [movieId]);
 
-  // console.log(film);
+  console.log(error.message);
   // let navigate = useNavigate();
   // let location = useLocation();
   // console.log(movieId);
