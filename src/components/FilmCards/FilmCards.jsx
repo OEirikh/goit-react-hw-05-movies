@@ -8,7 +8,11 @@ export function FilmCards({ film: { poster_path, name, title } }) {
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
       <Image
-        src={`${IMAGE_URL + poster_path}`}
+        src={
+          poster_path
+            ? `${IMAGE_URL + poster_path}`
+            : `https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg`
+        }
         alt={title ?? name}
         borderRadius="lg"
       />

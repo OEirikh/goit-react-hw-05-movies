@@ -19,7 +19,6 @@ export function Home() {
   return (
     <Box p={4}>
       <Text fontSize="5xl">Trending today</Text>
-
       <Grid templateColumns="repeat(3, 5fr) ">
         {films.map(film => {
           return (
