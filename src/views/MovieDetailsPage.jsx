@@ -14,7 +14,7 @@ import { FilmCards } from 'components/FilmCards/FilmCards';
 export function MovieDetailsPage() {
   const [film, setFilm] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   let { movieId } = useParams();
 
@@ -25,8 +25,8 @@ export function MovieDetailsPage() {
         const movieData = await movieDetails(movieId);
         setFilm(movieData);
       } catch (error) {
-        setError(error);
-        console.log('ERROR by useFetchMovieDetails', error.message);
+        // setError(error);
+        console.log(error.message);
       } finally {
         setLoading(false);
       }
@@ -34,7 +34,7 @@ export function MovieDetailsPage() {
     getMovie();
   }, [movieId]);
 
-  console.log(error.message);
+  // console.log(error.message);
   // let navigate = useNavigate();
   // let location = useLocation();
   // console.log(movieId);
