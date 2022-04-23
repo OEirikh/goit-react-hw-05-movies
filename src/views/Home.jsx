@@ -12,7 +12,6 @@ export function Home() {
 
   useEffect(() => {
     getTrending().then(resp => {
-      console.log(resp.results);
       setTrends(resp.results);
     });
   }, []);
