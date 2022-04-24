@@ -7,6 +7,7 @@ export function useFetchDetailsOneFilm() {
   const [loading, setLoading] = useState(false);
   // const [error, setError] = useState(null);
   let { movieId } = useParams();
+
   useEffect(() => {
     async function getMovie() {
       setLoading(true);

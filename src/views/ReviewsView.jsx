@@ -2,7 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import { Box, Text } from '@chakra-ui/react';
 
-export function Reviews(props) {
+export function ReviewsView(props) {
   return (
     <Box p={4}>
       <Text fontSize="5xl">Reviews</Text>
@@ -10,4 +10,4 @@ export function Reviews(props) {
   );
 }
 
-// Reviews.propTypes = {};
+// ReviewsView.propTypes = {};

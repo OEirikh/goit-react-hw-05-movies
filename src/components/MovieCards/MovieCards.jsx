@@ -4,9 +4,15 @@ import React from 'react';
 import { Box, Text, Image, Center } from '@chakra-ui/react';
 import { IMAGE_URL } from 'services/apiRequests';
 
-export function FilmCards({ film: { poster_path, name, title } }) {
+export function MovieCards({ film: { poster_path, name, title } }) {
   return (
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Box
+      maxW="sm"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+      pd="5px"
+    >
       <Image
         src={
           poster_path
@@ -23,4 +29,4 @@ export function FilmCards({ film: { poster_path, name, title } }) {
   );
 }
 
-// FilmCards.propTypes = {}
+// MovieCards.propTypes = {}

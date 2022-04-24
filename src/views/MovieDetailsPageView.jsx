@@ -6,10 +6,10 @@ import {
 } from 'react-router-dom';
 import { useFetchDetailsOneFilm } from 'hooks';
 import { Box, Text, Button } from '@chakra-ui/react';
-import { FilmCards } from 'components/FilmCards/FilmCards';
+import { MovieCards } from 'components/MovieCards/MovieCards';
 // import PropTypes from 'prop-types';
 
-export function MovieDetailsPage() {
+export function MovieDetailsPageView() {
   const { filmDetails, isLoading } = useFetchDetailsOneFilm();
   const {
     title,
@@ -34,7 +34,8 @@ export function MovieDetailsPage() {
     <Box p={4}>
       <Text fontSize="5xl">MovieDetailsPage</Text>
       <Button colorScheme="gray">Go Back</Button>
-      {!isLoading && <FilmCards film={filmDetails} />}
+      {isLoading && 'Loading...'}
+      {!isLoading && <MovieCards film={filmDetails} />}
       <Box>
         <Text>{title}</Text>
         <Text>{release_date.slice(0, 4)}</Text>
@@ -52,4 +53,4 @@ export function MovieDetailsPage() {
   );
 }
 
-// MovieDetailsPage.propTypes = {};
+// MovieDetailsPageView.propTypes = {};
