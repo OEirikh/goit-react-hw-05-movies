@@ -1,8 +1,8 @@
 import { Box, Text } from '@chakra-ui/react';
-import { MoviesList } from 'components/MoviesList/MoviesList';
 import { useFetchTrendingFilms } from 'hooks';
+import MoviesList from 'components/MoviesList/MoviesList';
 
-export function HomeView() {
+function HomeView() {
   const { films, isLoading } = useFetchTrendingFilms();
 
   return (
@@ -13,3 +13,4 @@ export function HomeView() {
     </Box>
   );
 }
+export default HomeView;

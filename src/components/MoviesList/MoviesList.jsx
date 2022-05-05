@@ -4,9 +4,9 @@ import { SimpleGrid } from '@chakra-ui/react';
 
 // import PropTypes from 'prop-types'
 
-import { MovieCards } from 'components/MovieCards/MovieCards';
+import MovieCards from 'components/MovieCards/MovieCards';
 
-export function MoviesList({ films, route }) {
+function MoviesList({ films, route }) {
   return (
     <SimpleGrid minChildWidth="280px" spacing="50px">
       {films.map(film => {
@@ -15,5 +15,6 @@ export function MoviesList({ films, route }) {
     </SimpleGrid>
   );
 }
+export default MoviesList;
 
 // MoviesList.propTypes = {}

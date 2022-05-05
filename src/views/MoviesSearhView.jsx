@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { useSearchParams, Outlet } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
 import { useFetchSearchMovieOnRequest } from 'hooks';
-import { SearchBar } from 'components/SearchBar/SearchBar';
-import { MoviesList } from 'components/MoviesList/MoviesList';
+import SearchBar from 'components/SearchBar/SearchBar';
+import MoviesList from 'components/MoviesList/MoviesList';
 
-export function MoviesSearchView() {
+function MoviesSearchView() {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
   const { filmsBySearch, isLoading } =
@@ -32,3 +32,4 @@ export function MoviesSearchView() {
     </Box>
   );
 }
+export default MoviesSearchView;

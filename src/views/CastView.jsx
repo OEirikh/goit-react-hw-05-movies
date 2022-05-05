@@ -1,9 +1,9 @@
 import React from 'react';
 import { SimpleGrid } from '@chakra-ui/react';
 import { useFechCastOfTheFilm } from 'hooks';
-import { ActorCards } from 'components/ActorCards/ActorCards';
+import ActorCards from 'components/ActorCards/ActorCards';
 
-export function CastView() {
+function CastView() {
   const { cast, isLoading } = useFechCastOfTheFilm();
 
   return (
@@ -23,3 +23,4 @@ export function CastView() {
     </>
   );
 }
+export default CastView;

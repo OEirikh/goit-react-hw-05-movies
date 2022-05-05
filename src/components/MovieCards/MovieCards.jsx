@@ -6,10 +6,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { Box, Text, Image, Center } from '@chakra-ui/react';
 import { IMAGE_URL } from 'services/apiRequests';
 
-export function MovieCards({
-  film: { poster_path, name, title, id },
-  route = '',
-}) {
+function MovieCards({ film: { poster_path, name, title, id }, route = '' }) {
   const location = useLocation();
 
   return (
@@ -36,5 +33,7 @@ export function MovieCards({
     </Box>
   );
 }
+
+export default MovieCards;
 
 // MovieCards.propTypes = {}

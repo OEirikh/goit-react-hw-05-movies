@@ -2,13 +2,13 @@ import { lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './components/Layout/Layout';
 
-import { HomeView } from 'views/HomeView';
-import { MoviesSearchView } from './views/MoviesSearhView';
-import { MovieDetailsPageView } from 'views/MovieDetailsPageView';
-import { CastView } from 'views/CastView';
-import { ReviewsView } from 'views/ReviewsView';
+const HomeView = lazy(() => import('./views/HomeView'));
+const MoviesSearchView = lazy(() => import('./views/MoviesSearhView'));
+const MovieDetailsPageView = lazy(() => import('./views/MovieDetailsPageView'));
+const CastView = lazy(() => import('./views/CastView'));
+const ReviewsView = lazy(() => import('./views/ReviewsView'));
 
-export const App = () => {
+function App() {
   return (
     <>
       <Routes>
@@ -24,4 +24,6 @@ export const App = () => {
       </Routes>
     </>
   );
-};
+}
+
+export default App;

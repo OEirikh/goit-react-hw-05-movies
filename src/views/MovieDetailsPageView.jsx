@@ -3,7 +3,7 @@ import { useFetchDetailsOneFilm } from 'hooks';
 import { Box, Text, Button, Image, Flex, Center } from '@chakra-ui/react';
 import { IMAGE_URL } from 'services/apiRequests';
 
-export function MovieDetailsPageView() {
+function MovieDetailsPageView() {
   const { filmDetails, isLoading } = useFetchDetailsOneFilm();
   const {
     name,
@@ -90,3 +90,5 @@ export function MovieDetailsPageView() {
     </Box>
   );
 }
+
+export default MovieDetailsPageView;

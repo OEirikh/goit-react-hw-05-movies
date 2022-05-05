@@ -9,7 +9,7 @@ import {
 import { SearchIcon } from '@chakra-ui/icons';
 import PropTypes from 'prop-types';
 
-export function SearchBar({ searchHandler }) {
+function SearchBar({ searchHandler }) {
   const [inputValue, setInputValue] = useState('');
   const handleChange = evt => setInputValue(evt.target.value.toLowerCase());
 
@@ -46,6 +46,8 @@ export function SearchBar({ searchHandler }) {
     </Box>
   );
 }
+
+export default SearchBar;
 
 SearchBar.propTypes = {
   searchHandler: PropTypes.func.isRequired,

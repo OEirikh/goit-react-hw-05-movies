@@ -3,7 +3,7 @@ import { IMAGE_URL } from 'services/apiRequests';
 import { Box, Text, Image } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
-export function ActorCards({ profile_path, name, character }) {
+function ActorCards({ profile_path, name, character }) {
   return (
     <Box>
       <Box>
@@ -22,6 +22,8 @@ export function ActorCards({ profile_path, name, character }) {
     </Box>
   );
 }
+
+export default ActorCards;
 
 ActorCards.propTypes = {
   profile_path: PropTypes.string,
