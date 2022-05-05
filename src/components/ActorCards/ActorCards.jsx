@@ -24,8 +24,7 @@ export function ActorCards({ profile_path, name, character }) {
 }
 
 ActorCards.propTypes = {
-  cast_id: PropTypes.string.isRequired,
-  profile_path: PropTypes.string.isRequired,
+  profile_path: PropTypes.string,
   name: PropTypes.string.isRequired,
   character: PropTypes.string.isRequired,
 };
