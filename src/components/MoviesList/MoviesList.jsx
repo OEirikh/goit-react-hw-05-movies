@@ -1,8 +1,6 @@
 import React from 'react';
-
 import { SimpleGrid } from '@chakra-ui/react';
-
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 import MovieCards from 'components/MovieCards/MovieCards';
 
@@ -17,4 +15,9 @@ function MoviesList({ films, route }) {
 }
 export default MoviesList;
 
-// MoviesList.propTypes = {}
+MoviesList.propTypes = {
+  film: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+  }),
+  route: PropTypes.string,
+};

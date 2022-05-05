@@ -13,7 +13,7 @@ export function useFatchReviewsOfTheFilm() {
       setIsLoading(true);
       try {
         const review = await movieReviews(movieId);
-        setReview(review);
+        setReview(review.results);
       } catch (error) {
         console.log(error.message, 'ERROR by useFatchReviewsOfTheFilm');
       } finally {

@@ -1,27 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-// import PropTypes from 'prop-types';
-
-// export default function NavBar() {
-//   return (
-//     <>
-//       <Breadcrumb>
-//         <BreadcrumbItem>
-//           <BreadcrumbLink as={Link} to="/">
-//             Home
-//           </BreadcrumbLink>
-//         </BreadcrumbItem>
-//         <BreadcrumbItem>
-//           <BreadcrumbLink as={Link} to="/movies">
-//             Movies
-//           </BreadcrumbLink>
-//         </BreadcrumbItem>
-//       </Breadcrumb>
-//     </>
-//   );
-// }
-
 import {
   Box,
   Flex,
@@ -88,5 +67,3 @@ export function NavBar() {
     </>
   );
 }
-
-// NavBar.propTypes = {};

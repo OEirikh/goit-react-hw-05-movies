@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 import { Box, Text, Image, Center } from '@chakra-ui/react';
 import { IMAGE_URL } from 'services/apiRequests';
@@ -36,4 +35,12 @@ function MovieCards({ film: { poster_path, name, title, id }, route = '' }) {
 
 export default MovieCards;
 
-// MovieCards.propTypes = {}
+MovieCards.propTypes = {
+  film: PropTypes.shape({
+    poster_path: PropTypes.string,
+    name: PropTypes.string,
+    title: PropTypes.string,
+    id: PropTypes.number.isRequired,
+  }),
+  route: PropTypes.string.isRequired,
+};
