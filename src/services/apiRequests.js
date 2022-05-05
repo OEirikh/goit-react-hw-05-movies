@@ -12,7 +12,7 @@ export async function getTrending() {
 
 export async function searchMovies(query) {
   const response = await axios.get(
-    `search/movie?api_key=${APi_KEY}&language=en-US&page=1&query=${query}&include_adult=true`
+    `/search/movie?api_key=${APi_KEY}&language=en-US&page=1&query=${query}&include_adult=true`
   );
   return response.data;
 }

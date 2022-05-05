@@ -4,13 +4,13 @@ import { movieDetails } from 'services/apiRequests';
 
 export function useFetchDetailsOneFilm() {
   const [filmDetails, setFilm] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   // const [error, setError] = useState(null);
   let { movieId } = useParams();
 
   useEffect(() => {
     async function getMovie() {
-      setLoading(true);
+      setIsLoading(true);
       try {
         const movieData = await movieDetails(movieId);
         setFilm(movieData);
@@ -18,11 +18,11 @@ export function useFetchDetailsOneFilm() {
         // setError(error);
         console.log(error.message);
       } finally {
-        setLoading(false);
+        setIsLoading(false);
       }
     }
     getMovie();
   }, [movieId]);
 
-  return { filmDetails, loading };
+  return { filmDetails, isLoading };
 }

@@ -4,22 +4,31 @@ import {
   InputGroup,
   InputRightElement,
   IconButton,
+  Box,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-// import { searchMovies } from 'services/apiRequests';
+export function SearchBar({ searchHandler }) {
+  const [inputValue, setInputValue] = useState('');
+  const handleChange = evt => setInputValue(evt.target.value.toLowerCase());
 
-export function SearchBar(props) {
-  const [value, setValue] = useState('');
+  const submitHandler = evt => {
+    evt.preventDefault();
 
-  const handleChange = evt => setValue(evt.target.value.toLowerCase());
+    if (inputValue.trim() === '') {
+      return alert('Enter your request, please');
+    }
+
+    searchHandler(inputValue);
+    // setInputValue('');
+  };
 
   return (
-    <>
+    <Box as="form" mb="5" onSubmit={submitHandler}>
       <InputGroup>
         <Input
-          value={value}
+          value={inputValue}
           onChange={handleChange}
           placeholder="Searh Movies"
           _placeholder={{ opacity: 0.5, color: 'teal' }}
@@ -27,14 +36,17 @@ export function SearchBar(props) {
         />
         <InputRightElement width="4.5rem">
           <IconButton
+            type="submit"
             aria-label="Search database"
             size="sm"
             icon={<SearchIcon />}
           />
         </InputRightElement>
       </InputGroup>
-    </>
+    </Box>
   );
 }
 
-// SearchBar.propTypes = {}
+SearchBar.propTypes = {
+  searchHandler: PropTypes.func.isRequired,
+};

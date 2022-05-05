@@ -1,13 +1,25 @@
 import React from 'react';
-import { Box, Text } from '@chakra-ui/react';
-// import PropTypes from 'prop-types';
+import { SimpleGrid } from '@chakra-ui/react';
+import { useFechCastOfTheFilm } from 'hooks';
+import { ActorCards } from 'components/ActorCards/ActorCards';
 
-export function CastView(props) {
+export function CastView() {
+  const { cast, isLoading } = useFechCastOfTheFilm();
+
   return (
-    <Box p={4}>
-      <Text fontSize="5xl">Cast</Text>
-    </Box>
+    <>
+      {!isLoading && (
+        <SimpleGrid minChildWidth="250px" spacing="30px">
+          {cast.map(({ cast_id, profile_path, name, character }) => (
+            <ActorCards
+              key={cast_id}
+              profile_path={profile_path}
+              name={name}
+              character={character}
+            />
+          ))}
+        </SimpleGrid>
+      )}
+    </>
   );
 }
-
-// CastViev.propTypes = {};

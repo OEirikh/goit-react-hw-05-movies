@@ -1,23 +1,18 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import { Grid, GridItem } from '@chakra-ui/react';
+
+import { SimpleGrid } from '@chakra-ui/react';
+
 // import PropTypes from 'prop-types'
+
 import { MovieCards } from 'components/MovieCards/MovieCards';
 
-export function MoviesList({ films }) {
-  const location = useLocation();
+export function MoviesList({ films, route }) {
   return (
-    <Grid templateColumns="repeat(3, 5fr) ">
+    <SimpleGrid minChildWidth="280px" spacing="50px">
       {films.map(film => {
-        return (
-          <GridItem key={film.id}>
-            <NavLink to={`movies/${film.id}`} state={{ from: location }}>
-              <MovieCards film={film} />
-            </NavLink>
-          </GridItem>
-        );
+        return <MovieCards key={film.id} film={film} route={route} />;
       })}
-    </Grid>
+    </SimpleGrid>
   );
 }
 
