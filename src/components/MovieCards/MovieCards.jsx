@@ -42,5 +42,5 @@ MovieCards.propTypes = {
     title: PropTypes.string,
     id: PropTypes.number.isRequired,
   }),
-  route: PropTypes.string.isRequired,
+  route: PropTypes.string,
 };

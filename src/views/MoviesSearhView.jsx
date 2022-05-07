@@ -13,10 +13,10 @@ function MoviesSearchView() {
   const currentSearchQuery = searchParams.get('query');
 
   useEffect(() => {
-    currentSearchQuery
-      ? setSearchQuery(currentSearchQuery)
-      : setSearchParams({ query: searchQuery });
-  }, [currentSearchQuery, searchQuery, setSearchParams, setSearchQuery]);
+    if (currentSearchQuery) {
+      setSearchQuery(currentSearchQuery);
+    }
+  }, [currentSearchQuery]);
 
   const searchHandler = query => {
     setSearchQuery(query);
@@ -24,7 +24,7 @@ function MoviesSearchView() {
   };
 
   return (
-    <Box p={4}>
+    <Box p={5}>
       <SearchBar searchHandler={searchHandler} />
       {isLoading && '...Loading'}
       {!isLoading && <MoviesList films={filmsBySearch} />}

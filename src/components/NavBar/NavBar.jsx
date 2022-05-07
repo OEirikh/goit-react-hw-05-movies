@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import {
   Box,
   Flex,
   HStack,
-  Link,
+  Button,
   IconButton,
   useDisclosure,
   useColorModeValue,
@@ -13,24 +13,34 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
-const NavLinkk = ({ children, link }) => (
-  <Link
+const NavLinkk = ({ children, link, isDisabled }) => (
+  <Button
+    mr={50}
     px={2}
     py={1}
     rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
     as={NavLink}
     to={link}
+    color="#4b4f56"
+    _hover={{
+      bg: 'teal',
+      transform: 'scale(1.2)',
+      color: 'white',
+    }}
+    _disabled={{
+      bg: 'teal',
+      transform: 'scale(0.98)',
+      color: 'white',
+    }}
+    isDisabled={isDisabled}
   >
     {children}
-  </Link>
+  </Button>
 );
 
 export function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const location = useLocation();
 
   return (
     <>
@@ -49,8 +59,18 @@ export function NavBar() {
               spacing={4}
               display={{ base: 'none', md: 'flex' }}
             >
-              <NavLinkk link={'/'}>Home </NavLinkk>
-              <NavLinkk link={'/movies'}>Movies</NavLinkk>
+              <NavLinkk
+                link={'/'}
+                isDisabled={location.pathname === '/' ? true : false}
+              >
+                Home{' '}
+              </NavLinkk>
+              <NavLinkk
+                link={'/movies'}
+                isDisabled={location.pathname === '/movies' ? true : false}
+              >
+                Movies
+              </NavLinkk>
             </HStack>
           </HStack>
         </Flex>
@@ -58,8 +78,18 @@ export function NavBar() {
         {isOpen ? (
           <Box pb={4} display={{ md: 'none' }}>
             <Stack as={'nav'} spacing={4}>
-              <NavLinkk link={'/'}>Home </NavLinkk>
-              <NavLinkk link={'/movies'}>Movies</NavLinkk>
+              <NavLinkk
+                link={'/'}
+                isDisabled={location.pathname === '/' ? true : false}
+              >
+                Home{' '}
+              </NavLinkk>
+              <NavLinkk
+                link={'/movies'}
+                isDisabled={location.pathname === '/movies' ? true : false}
+              >
+                Movies
+              </NavLinkk>
             </Stack>
           </Box>
         ) : null}

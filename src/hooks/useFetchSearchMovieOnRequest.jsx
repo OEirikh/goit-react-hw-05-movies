@@ -14,10 +14,18 @@ export function useFetchSearchMovieOnRequest(searchQuery) {
       setIsLoading(true);
       try {
         const films = await searchMovies(searchQuery);
+        if (films.results.length === 0) {
+          return alert(
+            `Nothing was found for the query "${searchQuery}", please specify your query)`
+          );
+        }
         setFilmsBySearch(films.results);
       } catch (error) {
         // setError(error);
-        console.log(error.message, 'The query did not return any results');
+        console.log(
+          error.message,
+          'An error occurred in useFetchSearchMovieOnRequest'
+        );
       } finally {
         setIsLoading(false);
       }

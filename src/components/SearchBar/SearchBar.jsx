@@ -11,7 +11,7 @@ import PropTypes from 'prop-types';
 
 function SearchBar({ searchHandler }) {
   const [inputValue, setInputValue] = useState('');
-  const handleChange = evt => setInputValue(evt.target.value.toLowerCase());
+  const handleChange = evt => setInputValue(evt.target.value);
 
   const submitHandler = evt => {
     evt.preventDefault();
@@ -19,9 +19,7 @@ function SearchBar({ searchHandler }) {
     if (inputValue.trim() === '') {
       return alert('Enter your request, please');
     }
-
-    searchHandler(inputValue);
-    // setInputValue('');
+    searchHandler(inputValue.trim().toLowerCase());
   };
 
   return (
